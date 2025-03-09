@@ -1,42 +1,58 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.tile {
+  display: flex;
+  width: 62px;
+  height: 62px;
+  border: 2px groove lightgray;
+  margin: 3px;
+  justify-content: center;
+  align-items: center;
+  font-size: 30pt;
+  font-weight: bold;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.line {
+  display: flex;
+  flex-direction: row;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.gameboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.keyButton {
+  cursor: pointer;
+  width: 43px;
+  height: 58px;
+  background-color: #d3d6da;
+  border-radius: 5px;
+  border: 0px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  font-size: 16pt;
+  margin: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.wideKeyButton {
+  width: 70px;
+  font-size: 12pt;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.keyboardRow {
+  display: flex;
+  justify-content: center;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
