@@ -52,8 +52,10 @@ export default function App() {
     const newMisplacedLetters = new Set(misplacedLetters);
     const newIncorrectLetters = new Set(inCorrectLetters);
     let freqAnswer = new Map();
-    answer.map((val) => {
-      if (freqAnswer.has(val)) {
+    answer.map((val, index) => {
+      if (val == guess[index]) {
+        return;
+      } else if (freqAnswer.has(val)) {
         freqAnswer.set(val, freqAnswer.get(val) + 1);
       } else {
         freqAnswer.set(val, 1);
@@ -72,6 +74,7 @@ export default function App() {
         return CLR_CORRECT;
       } else if (freqAnswer.get(letter) > 0) {
         // misplaced
+        freqAnswer.set(letter, freqAnswer.get(letter) - 1);
         newMisplacedLetters.add(letter);
         return CLR_MISPLACED;
       }
